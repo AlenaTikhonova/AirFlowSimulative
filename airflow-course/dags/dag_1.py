@@ -1,3 +1,14 @@
+from airflow.models.dag import DAG
+from datetime import datetime
+
+from airflow.operators.python import PythonOperator
+from airflow.operators.empty import EmptyOperator
+
+def test_func(ds: str, **context):
+    print(f"ds: {ds}")
+    print("-----")
+    print(context)
+
 with DAG(
     dag_id="first_dag",
     schedule="@daily",

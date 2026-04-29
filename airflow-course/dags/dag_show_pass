@@ -3,20 +3,20 @@ from datetime import datetime
 
 from airflow.operators.python import PythonOperator
 from airflow.operators.empty import EmptyOperator
-from airflow.hooks.base impoer BaseHook
+from airflow.hooks.base import BaseHook
 
 def test_func(**context):
     test_con = BaseHook.get_connection("Postgres_first")
     print(test_con.host)
     res = test_con.password
-    for i in res
+    for i in res:
        print(i)
 
-       
+
 with DAG(
     dag_id="dag_show_pass",
     schedule="@once",
-    start_date=datetime(year=2026, month=4, day=29),
+    start_date=datetime(year=2026, month=3, day=29),
 ) as dag:
 
     start_dag = EmptyOperator(

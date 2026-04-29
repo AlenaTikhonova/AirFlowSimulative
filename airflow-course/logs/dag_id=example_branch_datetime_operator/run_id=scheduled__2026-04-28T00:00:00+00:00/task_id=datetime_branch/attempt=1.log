@@ -1,0 +1,15 @@
+[2026-04-29T11:33:24.581+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_branch_datetime_operator.datetime_branch scheduled__2026-04-28T00:00:00+00:00 [queued]>
+[2026-04-29T11:33:24.592+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_branch_datetime_operator.datetime_branch scheduled__2026-04-28T00:00:00+00:00 [queued]>
+[2026-04-29T11:33:24.593+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2026-04-29T11:33:24.615+0000] {taskinstance.py:2217} INFO - Executing <Task(BranchDateTimeOperator): datetime_branch> on 2026-04-28 00:00:00+00:00
+[2026-04-29T11:33:24.636+0000] {standard_task_runner.py:60} INFO - Started process 72 to run task
+[2026-04-29T11:33:24.651+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'example_branch_datetime_operator', 'datetime_branch', 'scheduled__2026-04-28T00:00:00+00:00', '--job-id', '33', '--raw', '--subdir', '/home/***/.local/lib/python3.8/site-packages/***/example_dags/example_branch_datetime_operator.py', '--cfg-path', '/tmp/tmpl5m33cuq']
+[2026-04-29T11:33:24.659+0000] {standard_task_runner.py:88} INFO - Job 33: Subtask datetime_branch
+[2026-04-29T11:33:24.747+0000] {task_command.py:423} INFO - Running <TaskInstance: example_branch_datetime_operator.datetime_branch scheduled__2026-04-28T00:00:00+00:00 [running]> on host 5e1b82131c9c
+[2026-04-29T11:33:25.115+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_branch_datetime_operator' AIRFLOW_CTX_TASK_ID='datetime_branch' AIRFLOW_CTX_EXECUTION_DATE='2026-04-28T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-28T00:00:00+00:00'
+[2026-04-29T11:33:25.119+0000] {branch.py:35} INFO - Branch into ['date_outside_range']
+[2026-04-29T11:33:25.120+0000] {skipmixin.py:178} INFO - Following branch ['date_outside_range']
+[2026-04-29T11:33:25.209+0000] {skipmixin.py:244} INFO - Skipping tasks [('date_in_range', -1)]
+[2026-04-29T11:33:25.375+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=example_branch_datetime_operator, task_id=datetime_branch, execution_date=20260428T000000, start_date=20260429T113324, end_date=20260429T113325
+[2026-04-29T11:33:25.405+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-04-29T11:33:25.454+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

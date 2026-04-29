@@ -12,7 +12,7 @@ def test_func(ds: str, **context):
 with DAG(
     dag_id="first_dag",
     schedule="@daily",
-    start_date=datetime(year=2024, month=8, day=1),
+    start_date=datetime(year=2026, month=4, day=1),
 ) as dag:
 
     start_dag = EmptyOperator(

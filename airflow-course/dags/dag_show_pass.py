@@ -12,25 +12,19 @@ def test_func(**context):
     for i in res:
        print(i)
 
-
 with DAG(
     dag_id="dag_show_pass",
     schedule="@once",
     start_date=datetime(year=2026, month=3, day=29),
 ) as dag:
-
     start_dag = EmptyOperator(
         task_id="start_dag",
     )
-
     end_dag = EmptyOperator(
         task_id="end_dag",
     )
-
     test = PythonOperator(
         task_id="test",
-        python_callable=test_func,
-   
+        python_callable=test_func,   
     )
-
     start_dag >> test >> end_dag
